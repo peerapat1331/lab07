@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ตัวอย่างที่ 17</title>
+</head>
+<body>
+    <h3>ฟอร์มตรวจสอบความถูกต้อง</h3>
+    <form onsubmit="return validateForm()">
+        อีเมล: <input type="email" id="email"><br>
+        รหัสผ่าน: <input type="password" id="password"><br>
+        ยืนยันรหัสผ่าน: <input type="password" id="confirmPassword"><br>
+        <button type="submit">ส่งข้อมูล</button>
+        <p id="formError" style="color: red"></p>
+    </form>
+
+    <script>
+        function validateForm() {
+            const password = document.getElementById("password").value;
+            const confirmPassword = document.getElementById("confirmPassword").value;
+            if (password !== confirmPassword) {
+                document.getElementById("formError").textContent = "รหัสผ่านไม่ตรงกัน";
+                return false;
+            }
+            return true;
+        }
+    </script>
+</body>
+</html>
