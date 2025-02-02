@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ตัวอย่างที่ 15</title>
+</head>
+<body>
+    <h3>เครื่องคิดเลขพื้นฐาน</h3>
+    <input type="number" id="num1"> 
+    <select id="operator">
+        <option value="+">+</option>
+        <option value="-">-</option>
+        <option value="*">×</option>
+        <option value="/">÷</option>
+    </select> 
+    <input type="number" id="num2">
+    <button onclick="calculate()">=</button>
+    <span id="result"></span>
+
+    <script>
+        function calculate() {
+            const num1 = parseFloat(document.getElementById("num1").value);
+            const num2 = parseFloat(document.getElementById("num2").value);
+            const operator = document.getElementById("operator").value;
+            let result;
+            switch (operator) {
+                case "+": result = num1 + num2; break;
+                case "-": result = num1 - num2; break;
+                case "*": result = num1 * num2; break;
+                case "/": result = num1 / num2; break;
+            }
+            document.getElementById("result").textContent = isNaN(result) ? "กรุณาใส่ตัวเลข" : `= ${result}`;
+        }
+    </script>
+</body>
+</html>
