@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ตัวอย่างที่ 19</title>
+</head>
+<body>
+    <h3>แท็บเนื้อหา</h3>
+    <button onclick="showTab(0)">แท็บ 1</button>
+    <button onclick="showTab(1)">แท็บ 2</button>
+    <button onclick="showTab(2)">แท็บ 3</button>
+    <div id="tabs">
+        <div>เนื้อหาแท็บที่ 1</div>
+        <div style="display:none;">เนื้อหาแท็บที่ 2</div>
+        <div style="display:none;">เนื้อหาแท็บที่ 3</div>
+    </div>
+
+    <script>
+        function showTab(index) {
+            const tabs = document.querySelectorAll("#tabs div");
+            tabs.forEach((tab, i) => tab.style.display = i === index ? "block" : "none");
+        }
+    </script>
+</body>
+</html>
