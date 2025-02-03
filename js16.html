@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ตัวอย่างที่ 16</title>
+</head>
+<body>
+    <h3>สไลด์โชว์รูปภาพ</h3>
+    <img id="slideImage" src="image1.jpg" width="400" height="300">
+    <button onclick="changeSlide(-1)">ก่อนหน้า</button>
+    <button onclick="changeSlide(1)">ถัดไป</button>
+
+    <script>
+        const images = ["image1.jpg", "image2.jpg", "image3.jpg"];
+        let currentSlide = 0;
+
+        function changeSlide(direction) {
+            currentSlide = (currentSlide + direction + images.length) % images.length;
+            document.getElementById("slideImage").src = images[currentSlide];
+        }
+    </script>
+</body>
+</html>
